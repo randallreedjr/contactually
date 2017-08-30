@@ -25,6 +25,7 @@ class ContactsController < ApplicationController
   # POST /contacts.json
   def create
     @contact = Contact.new(contact_params)
+    set_contact_company
 
     respond_to do |format|
       if @contact.save
@@ -40,8 +41,11 @@ class ContactsController < ApplicationController
   # PATCH/PUT /contacts/1
   # PATCH/PUT /contacts/1.json
   def update
+    @contact.assign_attributes(contact_params)
+    set_contact_company
+
     respond_to do |format|
-      if @contact.update(contact_params)
+      if @contact.save
         format.html { redirect_to @contact, notice: 'Contact was successfully updated.' }
         format.json { render :show, status: :ok, location: @contact }
       else
@@ -67,17 +71,21 @@ class ContactsController < ApplicationController
       @contact = Contact.find(params[:id])
     end
 
+    def set_contact_company
+      return if @contact.nil? || company_params.nil? || company_params[:name].blank?
+      @contact.company = Company.find_or_initialize_by(name: company_params[:name])
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def contact_params
       params.require(:contact).permit(
-        :first_name, :last_name, :email, :phone, :extension,
-        company_attributes: [:name]
+        :first_name, :last_name, :email, :phone, :extension
       )
     end
 
     def company_params
       params.require(:contact).permit(
         company_attributes: [:name]
-      )
+      )[:company_attributes]
     end
 end

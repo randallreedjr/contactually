@@ -112,6 +112,12 @@ RSpec.describe ContactsController, type: :controller do
             post :create, {:contact => company_attributes}, valid_session
           }.to_not change(Company, :count)
         end
+
+        it 'associates the contact with the company' do
+          post :create, {:contact => company_attributes}, valid_session
+
+          expect(Contact.last.company).to eq company
+        end
       end
     end
 
@@ -123,7 +129,7 @@ RSpec.describe ContactsController, type: :controller do
     end
   end
 
-  fdescribe "PUT #update" do
+  describe "PUT #update" do
     let!(:contact) { FactoryGirl.create(:contact) }
 
     context "with valid params" do
@@ -162,6 +168,7 @@ RSpec.describe ContactsController, type: :controller do
           put :update, {:id => contact.to_param, :contact => company_attributes}, valid_session
           contact.reload
           expect(contact.first_name).to eq new_attributes[:first_name]
+          expect(contact.company).to eq company
         end
 
         it 'does not create a new Company' do
