@@ -35,3 +35,9 @@ to **hw@contactually.com**.
 
 **NOTE:**
 Your application *does not* need to handle authentication or authorization.
+
+##### Submission Notes from Candidate
+
+- Project is setup with Circle CI for continuous integration
+- Successful builds on the master branch are automatically deployed to Heroku
+- Project is hosted at https://infinite-journey-91970.herokuapp.com
