@@ -34,6 +34,8 @@ class ContactList extends React.Component {
           phone={contact.phone}
           extension={contact.extension}
           companyName={contact.company_name}
+          showUrl={contact.show_url}
+          editUrl={contact.edit_url}
         />
       );
     });
@@ -51,7 +53,7 @@ class ContactList extends React.Component {
               <th>Phone</th>
               <th>Extension</th>
               <th>Company</th>
-              <th colSpan="3"></th>
+              <th colSpan="2"></th>
             </tr>
           </thead>
 

@@ -8,6 +8,8 @@ class Contact extends React.Component {
         <td>{this.props.phone}</td>
         <td>{this.props.extension}</td>
         <td className='company-name'>{this.props.companyName}</td>
+        <td><a href={this.props.showUrl}>Show</a></td>
+        <td><a href={this.props.editUrl}>Edit</a></td>
       </tr>
     )
   }
@@ -19,5 +21,7 @@ Contact.propTypes = {
   email: React.PropTypes.string,
   phone: React.PropTypes.string,
   extension: React.PropTypes.string,
-  companyName: React.PropTypes.string
+  companyName: React.PropTypes.string,
+  showUrl: React.PropTypes.string,
+  editUrl: React.PropTypes.string
 }
