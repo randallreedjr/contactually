@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-RSpec.describe 'contact company name', type: :feature do
-  describe 'contact index' do
+RSpec.describe 'contact page', type: :feature do
+  describe 'index', js: true do
     context 'when contact has a company' do
       let!(:contact) { FactoryGirl.create(:contact, :with_company) }
 
@@ -15,15 +15,15 @@ RSpec.describe 'contact company name', type: :feature do
     context 'when contact has no company' do
       let!(:contact) {FactoryGirl.create(:contact) }
 
-      it 'displays no company name' do
+      it 'displays None for company name' do
         visit '/contacts'
 
-        expect(page.find('td.company-name').text).to eq ''
+        expect(page.find('td.company-name').text).to eq 'None'
       end
     end
   end
 
-  describe 'contact show' do
+  describe 'show' do
     context 'when contact has a company' do
       let!(:contact) { FactoryGirl.create(:contact, :with_company) }
 

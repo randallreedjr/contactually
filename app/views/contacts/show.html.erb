@@ -27,7 +27,7 @@
 
 <p class='company-name'>
   <strong>Company:</strong>
-  <%= @contact.company&.name || 'None' %>
+  <%= @contact.company_name %>
 </p>
 
 <%= link_to 'Edit', edit_contact_path(@contact) %> |

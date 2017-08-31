@@ -22,4 +22,20 @@ RSpec.describe Contact, type: :model do
       expect(contact).to validate_presence_of :first_name
     end
   end
+
+  describe '#company_name' do
+    context 'when contact has no company' do
+      it 'returns None' do
+        expect(contact.company_name).to eq 'None'
+      end
+    end
+
+    context 'when contact has a company' do
+      let(:company) { FactoryGirl.build(:company) }
+      let(:contact) { FactoryGirl.build(:contact, company: company) }
+      it 'returns the company name' do
+        expect(contact.company_name).to eq company.name
+      end
+    end
+  end
 end

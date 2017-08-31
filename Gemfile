@@ -16,6 +16,11 @@ gem 'jbuilder', '~> 2.6'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+# Use react-rails to create React views
+gem 'react-rails'
+# Use jQuery rails for React ajax requests
+gem 'jquery-rails'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -53,4 +58,11 @@ group :test do
 
   # Capybara for feature tests
   gem 'capybara'
+  gem 'poltergeist'
+
+  # Take screenshots on test failures
+  gem 'capybara-screenshot'
+
+  # Handle db transactions in capybara tests
+  gem 'transactional_capybara'
 end
