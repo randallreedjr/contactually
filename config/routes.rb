@@ -3,4 +3,5 @@ Rails.application.routes.draw do
 
   resources :contacts
   resources :companies
+  resources :file_uploads
 end
