@@ -15,10 +15,10 @@ RSpec.describe 'contact page', type: :feature do
     context 'when contact has no company' do
       let!(:contact) {FactoryGirl.create(:contact) }
 
-      it 'displays no company name' do
+      it 'displays None for company name' do
         visit '/contacts'
 
-        expect(page.find('td.company-name').text).to eq ''
+        expect(page.find('td.company-name').text).to eq 'None'
       end
     end
   end

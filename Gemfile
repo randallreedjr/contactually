@@ -58,6 +58,11 @@ group :test do
 
   # Capybara for feature tests
   gem 'capybara'
+  gem 'poltergeist'
+
   # Take screenshots on test failures
   gem 'capybara-screenshot'
+
+  # Handle db transactions in capybara tests
+  gem 'transactional_capybara'
 end
