@@ -6,16 +6,16 @@ RSpec.describe "contacts/index", type: :view do
       Contact.create!(
         :first_name => "First Name",
         :last_name => "Last Name",
-        :email => "Email",
-        :phone => "Phone",
+        :email_address => "Email",
+        :phone_number => "Phone",
         :extension => "Extension",
         :company => nil
       ),
       Contact.create!(
         :first_name => "First Name",
         :last_name => "Last Name",
-        :email => "Email",
-        :phone => "Phone",
+        :email_address => "Email",
+        :phone_number => "Phone",
         :extension => "Extension",
         :company => nil
       )

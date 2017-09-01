@@ -49,8 +49,8 @@ class ContactList extends React.Component {
             <tr>
               <th>First name</th>
               <th>Last name</th>
-              <th>Email</th>
-              <th>Phone</th>
+              <th>Email Address</th>
+              <th>Phone Number</th>
               <th>Extension</th>
               <th>Company</th>
               <th colSpan="2"></th>
