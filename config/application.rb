@@ -22,5 +22,8 @@ module ContactuallyLite
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+    # Use Resque as active job queue
+    config.active_job.queue_adapter = :resque
   end
 end

@@ -21,11 +21,12 @@ gem 'react-rails'
 # Use jQuery rails for React ajax requests
 gem 'jquery-rails'
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+# Use resque to queue background jobs in redis server
+gem 'redis'
+gem 'resque', require: 'resque/server'
 
-# Use Unicorn as the app server
-# gem 'unicorn'
+# Use puma as the web server
+gem 'puma'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -65,4 +66,9 @@ group :test do
 
   # Handle db transactions in capybara tests
   gem 'transactional_capybara'
+end
+
+group :production do
+  # Include rails_12factor for Heroku features
+  gem 'rails_12factor'
 end

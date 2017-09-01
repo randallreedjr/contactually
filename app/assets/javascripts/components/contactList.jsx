@@ -30,8 +30,8 @@ class ContactList extends React.Component {
           key={contact.id}
           firstName={contact.first_name}
           lastName={contact.last_name}
-          email={contact.email}
-          phone={contact.phone}
+          emailAddress={contact.email_address}
+          phoneNumber={contact.phone_number}
           extension={contact.extension}
           companyName={contact.company_name}
           showUrl={contact.show_url}
@@ -49,8 +49,8 @@ class ContactList extends React.Component {
             <tr>
               <th>First name</th>
               <th>Last name</th>
-              <th>Email</th>
-              <th>Phone</th>
+              <th>Email Address</th>
+              <th>Phone Number</th>
               <th>Extension</th>
               <th>Company</th>
               <th colSpan="2"></th>

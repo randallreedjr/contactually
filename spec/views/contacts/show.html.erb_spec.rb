@@ -5,8 +5,8 @@ RSpec.describe "contacts/show", type: :view do
     @contact = assign(:contact, Contact.create!(
       :first_name => "First Name",
       :last_name => "Last Name",
-      :email => "Email",
-      :phone => "Phone",
+      :email_address => "Email",
+      :phone_number => "Phone",
       :extension => "Extension",
       :company => nil
     ))
@@ -16,8 +16,8 @@ RSpec.describe "contacts/show", type: :view do
     render
     expect(rendered).to match(/First Name/)
     expect(rendered).to match(/Last Name/)
-    expect(rendered).to match(/Email/)
-    expect(rendered).to match(/Phone/)
+    expect(rendered).to match(/Email Address/)
+    expect(rendered).to match(/Phone Number/)
     expect(rendered).to match(/Extension/)
     expect(rendered).to match(//)
   end
