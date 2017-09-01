@@ -33,7 +33,9 @@ class FileUploadsController < ApplicationController
 
     respond_to do |format|
       if @file_upload.save
-        format.html { redirect_to @file_upload, notice: 'File upload was successfully created.' }
+        UploadProcessorJob.perform_later @file_upload.id
+
+        format.html { redirect_to file_uploads_path, notice: 'File upload was successfully created.' }
         format.json { render :show, status: :created, location: @file_upload }
       else
         format.html { render :new }

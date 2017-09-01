@@ -27,7 +27,7 @@ class UploadProcessor
     str.downcase.split.join('_').to_sym
   end
 
-  def create_company(name)
+  def create_company(company_name)
     Company.create(name: company_name)
   end
 
