@@ -47,8 +47,7 @@ class ContactList extends React.Component {
         <table>
           <thead>
             <tr>
-              <th>First name</th>
-              <th>Last name</th>
+              <th>Name</th>
               <th>Email Address</th>
               <th>Phone Number</th>
               <th>Extension</th>
