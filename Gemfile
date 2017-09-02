@@ -53,9 +53,7 @@ group :development, :test do
   # FactoryGirl and Faker for generating test data
   gem 'factory_girl_rails', '~> 4.0'
   gem 'faker'
-end
 
-group :test do
   # Shoulda Matchers for model tests
   gem 'shoulda-matchers', '~> 3.1'
 
@@ -68,6 +66,9 @@ group :test do
 
   # Handle db transactions in capybara tests
   gem 'transactional_capybara'
+
+  # Use Jasmine to test javascript components
+  gem 'jasmine-rails'
 end
 
 group :production do
