@@ -1,5 +1,3 @@
-
-
 class Contact extends React.Component {
   handleDelete(){
     this.props.delete(this.props.id)

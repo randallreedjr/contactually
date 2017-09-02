@@ -1,3 +1,9 @@
-function Name(props) {
-  return <a href={props.url}>{`${props.firstName} ${props.lastName}`}</a>
+class Name extends React.Component {
+  render() {
+    return (
+      <a href={this.props.url}>
+        {`${this.props.firstName} ${this.props.lastName}`}
+      </a>
+    );
+  }
 }
