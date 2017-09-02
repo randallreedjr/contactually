@@ -5,11 +5,17 @@ function sortByName(a,b) {
   return (a.last_name > b.last_name) ? 1 : -1;
 }
 
+function sortByEmail(a,b) {
+
+}
+
 class ContactList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      contacts: []
+      contacts: [],
+      sortField: '',
+      sortDirection: ''
     };
     this.delete = this.delete.bind(this);
   }
@@ -19,7 +25,7 @@ class ContactList extends React.Component {
       url: '/contacts.json',
       type: 'GET',
       success: (response) => {
-        this.setState({ contacts: response.sort(sortByName) });
+        this.setState({ contacts: response });
       }
     });
   }
@@ -35,6 +41,22 @@ class ContactList extends React.Component {
       }
     });
   }
+
+  fieldSortIndicator(field) {
+    if(field === this.state.sortField) {
+      if(this.state.sortDirection === 'asc') {
+        return <i className="fa fa-sort-asc" aria-hidden="true"></i>;
+      } else if(this.state.sortDirection === 'desc') {
+        return <i className="fa fa-sort-desc" aria-hidden="true"></i>;
+      }
+    }
+    // show sortable icon
+    return <i className="fa fa-sort" aria-hidden="true"></i>;
+  }
+
+  // handleSort {
+  //
+  // }
 
   render() {
     var contacts = this.state.contacts.map(contact => {
@@ -61,8 +83,8 @@ class ContactList extends React.Component {
         <table>
           <thead>
             <tr>
-              <th>Name</th>
-              <th>Email Address</th>
+              <SortableHeader text='Name' sortIcon={this.fieldSortIndicator('name')} />
+              <SortableHeader text='Email Address' sortIcon={this.fieldSortIndicator('email')} />
               <th>Phone Number</th>
               <th>Extension</th>
               <th>Company</th>
