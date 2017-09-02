@@ -11,6 +11,7 @@ class ContactList extends React.Component {
     this.state = {
       contacts: []
     };
+    this.delete = this.delete.bind(this);
   }
 
   componentDidMount() {
@@ -23,19 +24,32 @@ class ContactList extends React.Component {
     });
   }
 
+  delete(id) {
+    $.ajax({
+      url: `/contacts/${id}.json`,
+      type: 'DELETE',
+      success: () => {
+        this.setState(prevState => ({
+          contacts: prevState.contacts.filter(c => c.id != id)
+        }));
+      }
+    });
+  }
+
   render() {
-    var contacts = this.state.contacts.map((contact) => {
+    var contacts = this.state.contacts.map(contact => {
       return (
         <Contact
           key={contact.id}
+          id={contact.id}
           firstName={contact.first_name}
           lastName={contact.last_name}
           emailAddress={contact.email_address}
           phoneNumber={contact.phone_number}
           extension={contact.extension}
           companyName={contact.company_name}
-          showUrl={contact.show_url}
           editUrl={contact.edit_url}
+          delete={this.delete}
         />
       );
     });
@@ -47,8 +61,7 @@ class ContactList extends React.Component {
         <table>
           <thead>
             <tr>
-              <th>First name</th>
-              <th>Last name</th>
+              <th>Name</th>
               <th>Email Address</th>
               <th>Phone Number</th>
               <th>Extension</th>

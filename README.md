@@ -36,8 +36,19 @@ to **hw@contactually.com**.
 **NOTE:**
 Your application *does not* need to handle authentication or authorization.
 
-##### Submission Notes from Candidate
+## Submission Notes from Candidate
 
 - Project is setup with Circle CI for continuous integration
 - Successful builds on the master branch are automatically deployed to Heroku
 - Project is hosted at https://infinite-journey-91970.herokuapp.com
+
+### Reflections
+
+Completing this assignment required doing many things for the first time:
+
+-Integrating React into a Rails project (instead of having a separate React app that interacts with a Rails API)
+-Setting up Resque from scratch
+-Deploying a Resque/Redis app to Heroku
+-Configuring a CI to run both Rails specs (rspec) and React specs (jasmine)
+-Storing an uploaded file's contents in the database (instead of storing in the cloud with a service like S3)
+-Testing React components with React TestUtils (instead of airbnb's enzyme)

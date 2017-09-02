@@ -25,5 +25,8 @@ module ContactuallyLite
 
     # Use Resque as active job queue
     config.active_job.queue_adapter = :resque
+
+    # React component testing
+    config.react.addons = true
   end
 end
