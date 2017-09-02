@@ -6,7 +6,7 @@ function sortByName(a,b) {
 }
 
 function sortByEmail(a,b) {
-
+  return (a.email_address > b.email_address) ? 1 : ((b.email_address > a.email_address) ? -1 : 0);
 }
 
 class ContactList extends React.Component {
@@ -18,6 +18,7 @@ class ContactList extends React.Component {
       sortDirection: ''
     };
     this.delete = this.delete.bind(this);
+    this.handleSort = this.handleSort.bind(this);
   }
 
   componentDidMount() {
@@ -42,21 +43,26 @@ class ContactList extends React.Component {
     });
   }
 
-  fieldSortIndicator(field) {
-    if(field === this.state.sortField) {
-      if(this.state.sortDirection === 'asc') {
-        return <i className="fa fa-sort-asc" aria-hidden="true"></i>;
-      } else if(this.state.sortDirection === 'desc') {
-        return <i className="fa fa-sort-desc" aria-hidden="true"></i>;
-      }
-    }
-    // show sortable icon
-    return <i className="fa fa-sort" aria-hidden="true"></i>;
-  }
+  handleSort(e) {
+    var field = e.target.getAttribute('data-field');
+    var contacts = this.state.contacts;
+    var sortDirection;
 
-  // handleSort {
-  //
-  // }
+    if (field === 'name') {
+      contacts.sort(sortByName);
+    } else if (field === 'email') {
+      contacts.sort(sortByEmail);
+    }
+
+    if (this.state.sortField === field && this.state.sortDirection === 'asc') {
+      sortDirection = 'desc';
+      contacts.reverse();
+    } else {
+      sortDirection = 'asc';
+    }
+
+    this.setState({ contacts: contacts, sortField: field, sortDirection: sortDirection});
+  }
 
   render() {
     var contacts = this.state.contacts.map(contact => {
@@ -83,8 +89,20 @@ class ContactList extends React.Component {
         <table>
           <thead>
             <tr>
-              <SortableHeader text='Name' sortIcon={this.fieldSortIndicator('name')} />
-              <SortableHeader text='Email Address' sortIcon={this.fieldSortIndicator('email')} />
+              <SortableHeader
+                text='Name'
+                field='name'
+                sortField={this.state.sortField}
+                sortDirection={this.state.sortDirection}
+                onClick={this.handleSort}
+              />
+              <SortableHeader
+                text='Email Address'
+                field='email'
+                sortField={this.state.sortField}
+                sortDirection={this.state.sortDirection}
+                onClick={this.handleSort}
+              />
               <th>Phone Number</th>
               <th>Extension</th>
               <th>Company</th>
