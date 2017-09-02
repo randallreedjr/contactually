@@ -44,7 +44,14 @@ class ContactList extends React.Component {
   }
 
   handleSort(e) {
-    var field = e.target.getAttribute('data-field');
+    var field;
+    if (e.target.tagName === 'I') {
+      // Handle clicking of icon directly
+      field = e.target.parentElement.getAttribute('data-field');
+    } else {
+      field = e.target.getAttribute('data-field');
+    }
+
     var contacts = this.state.contacts;
     var sortDirection;
 
