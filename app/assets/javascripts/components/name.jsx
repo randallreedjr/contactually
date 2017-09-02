@@ -7,3 +7,9 @@ class Name extends React.Component {
     );
   }
 }
+
+Name.propTypes = {
+  firstName: React.PropTypes.string,
+  lastName: React.PropTypes.string,
+  url: React.PropTypes.string
+}

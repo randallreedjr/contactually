@@ -1,3 +1,13 @@
-function Email(props) {
-  return <a href={`mailto:${props.emailAddress}`}>{props.emailAddress}</a>
+class Email extends React.Component {
+  render() {
+    return (
+      <a href={`mailto:${this.props.emailAddress}`}>
+        {this.props.emailAddress}
+      </a>
+    );
+  }
+}
+
+Email.propTypes = {
+  emailAddress: React.PropTypes.string
 }

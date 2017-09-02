@@ -1,7 +1,7 @@
 describe('<Name />', function() {
   it('has a link to the contact url', function () {
     var name = TestUtils.renderIntoDocument(
-      <Name url="http://www.example.com" />
+      <Name url='http://www.example.com' />
     );
     const a = TestUtils.findRenderedDOMComponentWithTag(name, 'a');
 
