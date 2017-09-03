@@ -92,6 +92,7 @@ class ContactListContainer extends React.Component {
   }
 
   render() {
+    // TODO: Make add button work
     return (
       <div className="contact-list">
         <h1>
