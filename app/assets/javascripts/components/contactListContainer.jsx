@@ -16,10 +16,12 @@ class ContactListContainer extends React.Component {
       contacts: [],
       sortField: '',
       sortDirection: '',
-      loading: true
+      loading: true,
+      filter: ''
     };
     this.handleDelete = this.handleDelete.bind(this);
     this.handleSort = this.handleSort.bind(this);
+    this.handleFilter = this.handleFilter.bind(this);
   }
 
   componentDidMount() {
@@ -73,6 +75,20 @@ class ContactListContainer extends React.Component {
     this.setState({ contacts , sortField: field, sortDirection });
   }
 
+  handleFilter(e) {
+    this.setState({filter: e.target.value});
+  }
+
+  filteredContacts() {
+    if (this.state.filter === '') {
+      return this.state.contacts;
+    } else {
+      return this.state.contacts.filter((contact) => {
+        return contact.email_address.includes(this.state.filter);
+      }, this);
+    }
+  }
+
   contents() {
     if (this.state.loading) {
       return (<h3>Loading...</h3>);
@@ -81,7 +97,7 @@ class ContactListContainer extends React.Component {
     } else {
       return (
         <ContactList
-          contacts={this.state.contacts}
+          contacts={this.filteredContacts()}
           sortField={this.state.sortField}
           sortDirection={this.state.sortDirection}
           handleSort={this.handleSort}
@@ -99,6 +115,7 @@ class ContactListContainer extends React.Component {
           Your Contacts
           <button>Add Contact</button>
         </h1>
+        <div>Filter by email:<input value={this.state.filter} onChange={this.handleFilter} /></div>
         {this.contents()}
       </div>
     );
