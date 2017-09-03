@@ -73,11 +73,11 @@ class ContactListContainer extends React.Component {
     this.setState({ contacts , sortField: field, sortDirection });
   }
 
-  render() {
+  contents() {
     if (this.state.loading) {
-      return (<ContactListLoading />);
+      return (<h3>Loading...</h3>);
     } else if (this.state.contacts.length === 0) {
-      return (<ContactListEmpty />);
+      return (<h3>You have no contacts. Add a contact or upload a contact file.</h3>);
     } else {
       return (
         <ContactList
@@ -89,5 +89,17 @@ class ContactListContainer extends React.Component {
         />
       )
     }
+  }
+
+  render() {
+    return (
+      <div className="contact-list">
+        <h1>
+          Your Contacts
+          <button>Add Contact</button>
+        </h1>
+        {this.contents()}
+      </div>
+    );
   }
 }

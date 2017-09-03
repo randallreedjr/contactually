@@ -1,9 +1,6 @@
 class ContactList extends React.Component {
   render() {
     return (
-      <div className="contact-list">
-        <h1>Your Contacts</h1>
-
         <table>
           <thead>
             <tr>
@@ -47,7 +44,6 @@ class ContactList extends React.Component {
             })}
           </tbody>
         </table>
-      </div>
     );
   }
 }
