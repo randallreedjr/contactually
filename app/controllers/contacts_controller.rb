@@ -4,7 +4,7 @@ class ContactsController < ApplicationController
   # GET /contacts
   # GET /contacts.json
   def index
-    @contacts = Contact.all.includes(:company)
+    @contacts = Contact.default_order.includes(:company)
   end
 
   # GET /contacts/1

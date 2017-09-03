@@ -4,6 +4,8 @@ class Contact < ActiveRecord::Base
 
   validates :first_name, presence: true
 
+  scope :default_order, -> { order('last_name, first_name') }
+
   def company_name
     company&.name || 'None'
   end

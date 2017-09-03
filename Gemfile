@@ -30,6 +30,9 @@ gem 'resque', require: 'resque/server'
 # Use puma as the web server
 gem 'puma'
 
+# Use font awesome for icons
+gem 'font-awesome-rails'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 group :development do
