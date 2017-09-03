@@ -42,13 +42,37 @@ Your application *does not* need to handle authentication or authorization.
 - Successful builds on the master branch are automatically deployed to Heroku
 - Project is hosted at https://infinite-journey-91970.herokuapp.com
 
+### Assignment Checklist
+
+[x] Built in Ruby on Rails.
+[x] User can upload CSV file via web form
+[x] File can be parsed to extract contacts
+[x] Contacts are stored in relational database
+[x] Contact fields include first_name, last_name, emil_address, phone_number, extension, and company_name
+[] Contacts have reference to file upload that created them (if any)
+[x] Display list of contacts and their data
+[x] User can delete contacts via ajax using React components
+[] User can edit an existing contact via ajax using React components
+[x] User can sort list of contacts by Name (default sort) or email, both A-Z or Z-A
+[] User can filter contacts to only show those with '.com' email addresses
+
+[x] Write ruby tests using RSpec
+[x] Write javascript tests using React.TestUtils/Jasmine
+[x] Configure CI server to automatically run test suite
+[x] Deploy to Heroku
+
+[] Git bundle final submission
+[] Email the Heroku link and the git bundle to hw@contactually.com
+
 ### Reflections
 
-Completing this assignment required doing many things for the first time:
+Completing this assignment was challenging, as it required me to do many things for the first time:
 
--Integrating React into a Rails project (instead of having a separate React app that interacts with a Rails API)
--Setting up Resque from scratch
--Deploying a Resque/Redis app to Heroku
--Configuring a CI to run both Rails specs (rspec) and React specs (jasmine)
--Storing an uploaded file's contents in the database (instead of storing in the cloud with a service like S3)
--Testing React components with React TestUtils (instead of airbnb's enzyme)
+-Integrate React into a Rails project (instead of having a separate React app that interacts with a Rails API)
+-Set up Resque from scratch
+-Deploy a Resque/Redis app to Heroku
+-Configure a CI to run both Rails specs (rspec) and React specs (jasmine)
+-Store an uploaded file's contents in the database (instead of storing in the cloud with a service like S3)
+-Test React components with React TestUtils (instead of airbnb's enzyme)
+
+I also wrote a stackoverflow answer about one of my challenges: https://stackoverflow.com/a/46020680/1951290
