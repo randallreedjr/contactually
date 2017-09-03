@@ -108,16 +108,11 @@ class ContactListContainer extends React.Component {
   }
 
   render() {
-    // TODO: Make add button work
     return (
-      <div className="contact-list">
-        <h1>
-          Your Contacts
-          <button>Add Contact</button>
-        </h1>
-        <div>Filter by email:<input value={this.state.filter} onChange={this.handleFilter} /></div>
+      <ContactListHeader>
+        <ContactListFilter filter={this.state.filter} handleFilter={this.handleFilter} />
         {this.contents()}
-      </div>
+      </ContactListHeader>
     );
   }
 }
