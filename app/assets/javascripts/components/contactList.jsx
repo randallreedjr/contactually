@@ -62,13 +62,14 @@ class ContactList extends React.Component {
     }
 
     if (this.state.sortField === field && this.state.sortDirection === 'asc') {
+      // we are already sorting by this field; toggle the direction
       sortDirection = 'desc';
       contacts.reverse();
     } else {
       sortDirection = 'asc';
     }
 
-    this.setState({ contacts: contacts, sortField: field, sortDirection: sortDirection});
+    this.setState({ contacts , sortField: field, sortDirection });
   }
 
   render() {
