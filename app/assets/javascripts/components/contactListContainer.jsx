@@ -84,7 +84,9 @@ class ContactListContainer extends React.Component {
       return this.state.contacts;
     } else {
       return this.state.contacts.filter((contact) => {
-        return contact.email_address.includes(this.state.filter);
+        return contact.email_address.indexOf(this.state.filter) >= 0;
+        // `includes` works in browser but fails in Poltergeist javascript driver
+        // return contact.email_address.includes(filter);
       }, this);
     }
   }

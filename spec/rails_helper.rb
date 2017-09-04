@@ -68,8 +68,10 @@ RSpec.configure do |config|
 
   Capybara.javascript_driver = :poltergeist
   # Use poltergeist_debug to debug failing feature specs
+  # page.driver.debug will create a breakpoint
+
   # Capybara.register_driver :poltergeist_debug do |app|
-  #   Capybara::Poltergeist::Driver.new(app, :inspector => true)
+  #   Capybara::Poltergeist::Driver.new(app, :inspector => true, :js_errors => false)
   # end
   # Capybara.javascript_driver = :poltergeist_debug
 end
