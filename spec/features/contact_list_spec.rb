@@ -63,4 +63,43 @@ RSpec.describe 'contact list', type: :feature, js: true do
       end
     end
   end
+
+  describe 'sorting contacts' do
+    let!(:contact) { FactoryGirl.create(:contact, last_name: 'Smith', email_address: 'asmith@example.com') }
+    let!(:other_contact) { FactoryGirl.create(:contact, last_name: 'Adams', email_address: 'jadams@mail.org') }
+
+    context 'by name' do
+      it 'sorts contacts by name asc on one click' do
+        visit '/contacts'
+        find('th', text: 'Name').click
+
+        expect(page.first('td.name').text).to match('Adams')
+      end
+
+      it 'sorts contacts by name desc on two clicks' do
+        visit '/contacts'
+        find('th', text: 'Name').click
+        find('th', text: 'Name').click
+
+        expect(page.first('td.name').text).to match('Smith')
+      end
+    end
+
+    context 'by email' do
+      it 'sorts contacts by email asc on one click' do
+        visit '/contacts'
+        find('th', text: 'Email Address').click
+
+        expect(page.first('td.email').text).to match('asmith@example.com')
+      end
+
+      it 'sorts contacts by email desc on two clicks' do
+        visit '/contacts'
+        find('th', text: 'Email Address').click
+        find('th', text: 'Email Address').click
+
+        expect(page.first('td.email').text).to match('jadams@mail.org')
+      end
+    end
+  end
 end
