@@ -114,7 +114,10 @@ class ContactListContainer extends React.Component {
       <ContactListHeader>
         <div className='contact-actions'>
           <ContactListFilter filter={this.state.filter} handleFilter={this.handleFilter} />
-          <button>Add Contact</button>
+          <button className='btn btn-success'>
+            Add Contact
+            <i className="fa fa-user" aria-hidden="true"></i>
+          </button>
         </div>
         {this.contents()}
       </ContactListHeader>

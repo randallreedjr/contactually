@@ -12,7 +12,12 @@ class Contact extends React.Component {
         <td><Extension extension={this.props.extension} /></td>
         <td className='company-name'>{this.props.companyName}</td>
         <td><a href={this.props.editUrl}>Edit</a></td>
-        <td><button onClick={this.handleDelete.bind(this)}>Delete</button></td>
+        <td>
+          <button className='btn btn-danger' onClick={this.handleDelete.bind(this)}>
+            Delete
+            <i className="fa fa-trash-o" aria-hidden="true"></i>
+          </button>
+        </td>
       </tr>
     )
   }
