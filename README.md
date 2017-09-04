@@ -54,7 +54,7 @@ Your application *does not* need to handle authentication or authorization.
 [x] User can delete contacts via ajax using React components
 [] User can edit an existing contact via ajax using React components
 [x] User can sort list of contacts by Name (default sort) or email, both A-Z or Z-A
-[] User can filter contacts to only show those with '.com' email addresses
+[x] User can filter contacts to only show those with '.com' email addresses
 
 [x] Write ruby tests using RSpec
 [x] Write javascript tests using React.TestUtils/Jasmine
@@ -63,6 +63,14 @@ Your application *does not* need to handle authentication or authorization.
 
 [] Git bundle final submission
 [] Email the Heroku link and the git bundle to hw@contactually.com
+
+### Extensions
+With more time, here are some improvements I'd make:
+
+- Adjust layout of table columns so headers don't move as much based on list contents
+- Add Bootstrap for basic styles (especially links and buttons)
+- Display message when filter hides all contacts
+- Add font awesome icons to buttons
 
 ### Reflections
 
