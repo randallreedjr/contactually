@@ -43,32 +43,30 @@ Your application *does not* need to handle authentication or authorization.
 
 ### Assignment Checklist
 
-[x] Built in Ruby on Rails.
-[x] User can upload CSV file via web form
-[x] File can be parsed to extract contacts
-[x] Contacts are stored in relational database
-[x] Contact fields include first_name, last_name, email_address, phone_number, extension, and company_name
-[] Contacts have reference to file upload that created them (if any)
-[x] Display list of contacts and their data
-[x] User can delete contacts via ajax using React components
-[] User can edit an existing contact via ajax using React components
-[x] User can sort list of contacts by Name (default sort) or email, both A-Z or Z-A
-[x] User can filter contacts to only show those with '.com' email addresses
+- [x] Built in Ruby on Rails.
+- [x] User can upload CSV file via web form
+- [x] File can be parsed to extract contacts
+- [x] Contacts are stored in relational database
+- [x] Contact fields include first_name, last_name, email_address, phone_number, extension, and company_name
+- [x] Display list of contacts and their data
+- [x] User can delete contacts via ajax using React components
+- [x] User can sort list of contacts by Name (default sort) or email, both A-Z or Z-A
+- [x] User can filter contacts to only show those with '.com' email addresses
 
-[x] Write ruby tests using RSpec
-[x] Write javascript tests using React.TestUtils/Jasmine
-[x] Configure CI server to automatically run test suite
-[x] Deploy to Heroku
+- [x] Write ruby tests using RSpec
+- [x] Write javascript tests using React.TestUtils/Jasmine
+- [x] Configure CI server to automatically run test suite
+- [x] Deploy to Heroku
 
-[] Git bundle final submission
-[] Email the Heroku link and the git bundle to hw@contactually.com
+- [x] Git bundle final submission
+- [x] Email the Heroku link and the git bundle to hw@contactually.com
 
 ### Extensions
 With more time, here are some improvements I'd make:
 
 - Adjust layout of table columns so headers don't move as much based on list contents
 - Display message when filter hides all contacts
-- Convert remaining fields to use React
+- Convert remaining views to use React
 - Store file upload id for each contact
 
 ### Reflections
