@@ -5,7 +5,6 @@ class ContactListHeader extends React.Component {
       <div className="contact-list">
         <h1>
           Your Contacts
-          <button>Add Contact</button>
         </h1>
         {this.props.children}
       </div>

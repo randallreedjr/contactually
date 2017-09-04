@@ -1,10 +1,12 @@
 class ContactListFilter extends React.Component {
   render() {
     return (
-      <div>
-        <label htmlFor='email-filter'>Filter by email:</label>
-        <input id='email-filter' value={this.props.filter} onChange={this.props.handleFilter} />
-      </div>
+      <form className='form-inline'>
+        <div className='form-group'>
+          <label htmlFor='email-filter'>Filter by email:</label>
+          <input id='email-filter' className='form-control input-lg' type='text' value={this.props.filter} onChange={this.props.handleFilter} />
+        </div>
+      </form>
     )
   }
 }

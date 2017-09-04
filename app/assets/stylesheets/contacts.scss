@@ -1,3 +1,19 @@
+$spacer-margin: 5px;
+
 i.fa {
-  margin-left: 5px;
+  margin-left: $spacer-margin;
+}
+
+input#email-filter {
+  margin-left: $spacer-margin;
+  min-width: 400px;
+}
+
+td.phone {
+  min-width: 130px;
+}
+
+.contact-actions {
+  display: flex;
+  flex-wrap: wrap;
 }
