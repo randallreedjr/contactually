@@ -114,10 +114,16 @@ class ContactListContainer extends React.Component {
       <ContactListHeader>
         <div className='contact-actions'>
           <ContactListFilter filter={this.state.filter} handleFilter={this.handleFilter} />
-          <button className='btn btn-success'>
-            Add Contact
-            <i className="fa fa-user" aria-hidden="true"></i>
-          </button>
+          <div className="btn-group" role="group" aria-label="contacts">
+            <button className='btn btn-success'>
+              Add Contact
+              <i className="fa fa-user" aria-hidden="true"></i>
+            </button>
+            <button className='btn btn-secondary'>
+              Upload Contacts
+              <i className="fa fa-upload" aria-hidden="true"></i>
+            </button>
+          </div>
         </div>
         {this.contents()}
       </ContactListHeader>
