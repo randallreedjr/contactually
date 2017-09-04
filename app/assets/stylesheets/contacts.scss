@@ -1,0 +1,31 @@
+$spacer-margin: 5px;
+$filter-input-width: 400px;
+
+i.fa {
+  margin-left: $spacer-margin;
+}
+
+form#email-filter-form {
+  margin-bottom: 10px;
+}
+
+input#email-filter {
+  margin-left: $spacer-margin;
+  min-width: $filter-input-width;
+}
+
+td.phone {
+  min-width: 130px;
+}
+
+.contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+a.btn {
+  // re-center link text
+  padding-top: 13px;
+}

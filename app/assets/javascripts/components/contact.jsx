@@ -8,11 +8,16 @@ class Contact extends React.Component {
       <tr>
         <td className='name'><Name firstName={this.props.firstName} lastName={this.props.lastName} url={`/contacts/${this.props.id}`}/></td>
         <td className='email'><Email emailAddress={this.props.emailAddress} /></td>
-        <td><Phone phoneNumber={this.props.phoneNumber} /></td>
+        <td className='phone'><Phone phoneNumber={this.props.phoneNumber} /></td>
         <td><Extension extension={this.props.extension} /></td>
         <td className='company-name'>{this.props.companyName}</td>
         <td><a href={this.props.editUrl}>Edit</a></td>
-        <td><button onClick={this.handleDelete.bind(this)}>Delete</button></td>
+        <td>
+          <button className='btn btn-danger' onClick={this.handleDelete.bind(this)}>
+            Delete
+            <i className="fa fa-trash-o" aria-hidden="true"></i>
+          </button>
+        </td>
       </tr>
     )
   }

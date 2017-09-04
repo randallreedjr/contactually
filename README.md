@@ -6,7 +6,6 @@ uploads, stores the data in a relational database, and displays the information
 back to the user. This is an un-timed exercise, though most applicants submit 
 within a few days to a week.
 
-
 ##### Requirements
 
 - Built in Ruby on Rails.
@@ -48,7 +47,7 @@ Your application *does not* need to handle authentication or authorization.
 [x] User can upload CSV file via web form
 [x] File can be parsed to extract contacts
 [x] Contacts are stored in relational database
-[x] Contact fields include first_name, last_name, emil_address, phone_number, extension, and company_name
+[x] Contact fields include first_name, last_name, email_address, phone_number, extension, and company_name
 [] Contacts have reference to file upload that created them (if any)
 [x] Display list of contacts and their data
 [x] User can delete contacts via ajax using React components
@@ -68,9 +67,9 @@ Your application *does not* need to handle authentication or authorization.
 With more time, here are some improvements I'd make:
 
 - Adjust layout of table columns so headers don't move as much based on list contents
-- Add Bootstrap for basic styles (especially links and buttons)
 - Display message when filter hides all contacts
-- Add font awesome icons to buttons
+- Convert remaining fields to use React
+- Store file upload id for each contact
 
 ### Reflections
 

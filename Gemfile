@@ -30,6 +30,8 @@ gem 'resque', require: 'resque/server'
 # Use puma as the web server
 gem 'puma'
 
+gem 'bootstrap'
+
 # Use font awesome for icons
 gem 'font-awesome-rails'
 
