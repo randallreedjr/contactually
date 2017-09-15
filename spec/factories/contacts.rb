@@ -4,7 +4,7 @@ FactoryGirl.define do
     first_name { Faker::Name.first_name }
     last_name { Faker::Name.last_name }
     email_address { Faker::Internet.email }
-    phone_number { Faker::PhoneNumber.cell_phone.delete('-') }
+    phone_number { Faker::PhoneNumber.cell_phone.gsub(/[^\d]/,'')[-10..-1] } # only numerical characters
     extension { Faker::PhoneNumber.extension }
 
     trait :with_company do
