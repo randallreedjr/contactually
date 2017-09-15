@@ -31,7 +31,7 @@ RSpec.describe 'contact list', type: :feature, js: true do
 
     it "displays the contact's phone number" do
       visit '/contacts'
-      formatted_phone_number = "(#{contact.phone_number[0...3]}) #{contact.phone_number[3...6]}-#{contact.phone_number[6...10]}"
+      formatted_phone_number = Utility::PhoneUtilities.format_phone_number(contact.phone_number)
 
       expect(page.body).to have_content(formatted_phone_number)
     end
