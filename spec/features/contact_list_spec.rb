@@ -36,6 +36,7 @@ RSpec.describe 'contact list', type: :feature, js: true do
       expect(page.body).to have_content(formatted_phone_number)
     end
 
+    # TODO: Figure out intermittent test failure here
     it "displays the contact's extension" do
       visit '/contacts'
 
