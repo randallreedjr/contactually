@@ -29,13 +29,14 @@ RSpec.describe 'contact list', type: :feature, js: true do
       expect(page.body).to have_content(contact.email_address)
     end
 
-    xit "displays the contact's phone number" do
+    it "displays the contact's phone number" do
       visit '/contacts'
+      formatted_phone_number = Utility::PhoneUtilities.format_phone_number(contact.phone_number)
 
-      # TODO: Figure out how to test for formatted phone number
-      # expect(page.body).to have_content(contact.phone_number)
+      expect(page.body).to have_content(formatted_phone_number)
     end
 
+    # TODO: Figure out intermittent test failure here
     it "displays the contact's extension" do
       visit '/contacts'
 
