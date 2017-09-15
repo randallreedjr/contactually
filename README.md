@@ -40,6 +40,8 @@ Your application *does not* need to handle authentication or authorization.
 - Project is setup with Circle CI for continuous integration
 - Successful builds on the master branch are automatically deployed to Heroku
 - Project is hosted at https://infinite-journey-91970.herokuapp.com
+- Use `bundle exec rspec` to run Rails tests
+- Use `bundle exec rake spec:javascripts` to run React tests
 
 ### Assignment Checklist
 
